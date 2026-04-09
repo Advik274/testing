@@ -1,0 +1,125 @@
+{
+  "app_state": {
+    "current_phase": "phase3",
+    "phase1_round": 0,
+    "phase1_round_active": false,
+    "phase1_eliminate_count": 0,
+    "phase2_timer_end": "2026-04-09T23:43:16.731Z",
+    "phase3_timer_end": "2026-04-10T00:45:16.738Z",
+    "battery_drain_interval_ms": 60000,
+    "battery_drain_percent_per_tick": 2,
+    "phase3_problem": "Build a real-time feedback portal where users submit ratings and see live averages.",
+    "results_reveal_index": 8,
+    "current_question": null
+  },
+  "teams": [
+    {
+      "id": "495058d3-5159-42bd-8b79-b8048fc89826",
+      "name": "Alpha",
+      "year": "2nd",
+      "members": [
+        "Arnav"
+      ],
+      "passcode": "2654",
+      "color": "#ef4444",
+      "battery": 95,
+      "is_eliminated": false,
+      "elimination_phase": null,
+      "zones_captured": 0,
+      "zone_ids_captured": [],
+      "phase1_scores": [],
+      "phase1_total_score": 0,
+      "phase3_submission": {
+        "deploy_url": "f",
+        "github_url": "f",
+        "notes": "f",
+        "submitted_at": "2026-04-09T22:15:37.690Z"
+      },
+      "phase3_judge_scores": {
+        "ui": 3,
+        "functionality": 2,
+        "problem_fit": 5,
+        "total": 32
+      },
+      "phase3_problem": "Build a real-time feedback portal where users submit ratings and see live averages."
+    },
+    {
+      "id": "f8a2459b-6efd-4056-91e3-4484eb59512b",
+      "name": "Beta",
+      "year": "2nd",
+      "members": [
+        "Latiyan"
+      ],
+      "passcode": "8478",
+      "color": "#3b82f6",
+      "battery": 100,
+      "is_eliminated": false,
+      "elimination_phase": null,
+      "zones_captured": 0,
+      "zone_ids_captured": [],
+      "phase1_scores": [],
+      "phase1_total_score": 0,
+      "phase3_submission": {
+        "deploy_url": "d",
+        "github_url": "g",
+        "notes": "as",
+        "submitted_at": "2026-04-09T22:15:36.072Z"
+      },
+      "phase3_judge_scores": {
+        "ui": 5,
+        "functionality": 3,
+        "problem_fit": 4,
+        "total": 39
+      },
+      "phase3_problem": "Build a real-time feedback portal where users submit ratings and see live averages."
+    }
+  ],
+  "zones": [
+    {
+      "id": "zone_a3e825",
+      "name": "h",
+      "location": "",
+      "owner_team_id": null,
+      "owner_name": null,
+      "owner_color": null,
+      "captured_at": null,
+      "problem": null,
+      "_pending": null
+    }
+  ],
+  "phase1_questions": [],
+  "used_question_ids": [],
+  "event_log": [
+    {
+      "timestamp": "2026-04-09T22:15:16.738Z",
+      "type": "phase_change",
+      "message": "Phase → phase3",
+      "team_id": null
+    },
+    {
+      "timestamp": "2026-04-09T22:14:51.695Z",
+      "type": "zone_fail",
+      "message": "Alpha failed to capture h",
+      "team_id": "495058d3-5159-42bd-8b79-b8048fc89826"
+    },
+    {
+      "timestamp": "2026-04-09T22:13:34.928Z",
+      "type": "zone_attempt",
+      "message": "Alpha is attempting neutral zone h (-5% battery)",
+      "team_id": "495058d3-5159-42bd-8b79-b8048fc89826"
+    },
+    {
+      "timestamp": "2026-04-09T22:13:16.739Z",
+      "type": "phase_change",
+      "message": "Phase → phase2",
+      "team_id": null
+    },
+    {
+      "timestamp": "2026-04-09T22:13:14.037Z",
+      "type": "phase_change",
+      "message": "Phase → phase1",
+      "team_id": null
+    }
+  ],
+  "used_zone_problem_ids": []
+}
