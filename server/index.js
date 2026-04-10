@@ -3,7 +3,11 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { registerSocketEvents } from './sockets/events.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const httpServer = createServer(app);
@@ -60,6 +64,21 @@ loadDB();
 // ── REST ───────────────────────────────────────────────────────
 app.get('/api/state', (_, res) => res.json({ app_state: db.app_state }));
 app.get('/api/teams', (_, res) => res.json(db.teams.map(({ id, name, color, passcode, year }) => ({ id, name, color, passcode, year }))));
+
+// ── Static Client Files (Production) ───────────────────────────
+const clientDistPath = join(__dirname, '../client/dist');
+if (existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get('*', (_, res) => res.sendFile(join(clientDistPath, 'index.html')));
+}
+
+app.use((req, res, next) => {
+  if (!req.path.startsWith('/api') && !req.path.startsWith('/socket.io') && !req.path.startsWith('/health')) {
+    const indexPath = join(clientDistPath, 'index.html');
+    if (existsSync(indexPath)) return res.sendFile(indexPath);
+  }
+  next();
+});
 
 // ── Socket ─────────────────────────────────────────────────────
 registerSocketEvents(io, db, saveDB);
