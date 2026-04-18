@@ -14,5 +14,6 @@ export function getPhaseLabel(phase) {
     phase3: 'Phase 3 — Final Build',
     results: 'Results',
   };
+  // Return the label if phase exists, otherwise return the phase itself
   return labels[phase] || phase;
 }
